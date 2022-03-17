@@ -117,9 +117,6 @@ main {
   background-color: #fff;
 
   border-radius: 10px;
-
-  display: flex;
-  justify-content: space-between;
 }
 
 .card-text {
@@ -128,8 +125,16 @@ main {
 }
 
 .card.--open {
-  height: 80px;
-  background-color: var(--bg-yellow);
+  height: 110px;
+  background-color: transparent;
+}
+
+.card-select-question {
+  padding: 13px 6px 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .face {
@@ -141,6 +146,8 @@ main {
   border-radius: 10px;
   border: none;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+
+  background-color: var(--bg-yellow);
 
   position: absolute;
 
@@ -161,6 +168,10 @@ main {
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .front-card-turn {
@@ -171,11 +182,65 @@ main {
   transform: rotateY(0deg);
 }
 
+.front-card-turn-back {
+  transform: rotateY(0deg);
+}
+
+.back-card-turn-back {
+  transform: rotateY(180deg);
+}
+
 .card-turn-icon {
   position: absolute;
 
   bottom: 7px;
   right: 6px;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.btn {
+  color: #fff;
+  font-size: 7px;
+  height: 24px;
+
+  padding: 0 6px 0;
+
+  border: none;
+  border-radius: 5px;
+}
+
+.btn.--red {
+  background-color: var(--btn-red);
+}
+
+.btn.--orange {
+  background-color: var(--btn-orange);
+}
+
+.btn.--green {
+  background-color: var(--btn-green);
+}
+
+.card.--red {
+  border: solid 2px var(--btn-red);
+  text-decoration: line-through;
+  color: var(--btn-red);
+}
+
+.card.--orange {
+  border: solid 2px var(--btn-orange);
+  text-decoration: line-through;
+  color: var(--btn-orange);
+}
+
+.card.--green {
+  border: solid 2px var(--btn-green);
+  text-decoration: line-through;
+  color: var(--btn-green);
 }
 
 /* ************** Footer Styles ************** */
