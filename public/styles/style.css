@@ -1,5 +1,10 @@
 ﻿* {
   box-sizing: border-box;
+  text-decoration: none;
+
+  font-family: 'Recursive', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
 
   /* Color Variables */
 
@@ -11,23 +16,22 @@
   --btn-green: #2FBE34;
 }
 
-html {
-  font-family: 'Recursive', sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-}
-
-.--hidden {
-  display: none !important;
-}
-
-/* Homepage styles */
-
-#homepage {
+.app {
   width: 100%;
   height: 100vh;
 
+  overflow-y: auto;
+
   background-color: var(--bg-pink);
+}
+
+/* ************** Homepage styles ************** */
+
+#homepage {
+  /* width: 100%; */
+  height: 100vh;
+
+  /* background-color: var(--bg-pink); */
 
   display: flex;
   flex-direction: column;
@@ -37,13 +41,6 @@ html {
 
 #homepage img {
   width: 55px;
-}
-
-.logo-text {
-  font-family: 'Righteous', cursive;
-  font-weight: 400;
-  font-size: 20px;
-  color: #fff;
 }
 
 .logo-text.--first-screen {
@@ -65,4 +62,139 @@ html {
 
   background-color: #fff;
   color: var(--btn-red);
+}
+
+/* ************** Header Styles ************** */
+
+.header {
+  width: 100%;
+
+  background-color: transparent;
+}
+
+.header a {
+  width: 100%;
+
+  padding-top: 19px;
+  margin-bottom: 37px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header img {
+  width: 26px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-family: 'Righteous', cursive;
+  font-weight: 400;
+  font-size: 20px;
+  color: #fff;
+}
+
+/* ************** Main Styles ************** */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 50px;
+}
+
+/* ************** Cards Styles ************** */
+
+.card {
+  width: 182px;
+  height: 40px;
+
+  margin-bottom: 5px;
+
+  position: relative;
+  background-color: #fff;
+
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-text {
+  font-weight: 700;
+  line-height: initial;
+}
+
+.card.--open {
+  height: 80px;
+  background-color: var(--bg-yellow);
+}
+
+.face {
+  width: 100%;
+  height: 100%;
+
+  padding: 13px 6px 7px;
+
+  border-radius: 10px;
+  border: none;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+
+  position: absolute;
+
+  backface-visibility: hidden;
+  transition: all .5s;
+  transform-style: preserve-3d;
+}
+
+.front-face {
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+}
+
+.back-face {
+  transform: rotateY(180deg);
+
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+}
+
+.front-card-turn {
+  transform: rotateY(-180deg);
+}
+
+.back-card-turn {
+  transform: rotateY(0deg);
+}
+
+.card-turn-icon {
+  position: absolute;
+
+  bottom: 7px;
+  right: 6px;
+}
+
+/* ************** Footer Styles ************** */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 50px;
+
+  background-color: #fff;
+
+  font-family: 'Recursive', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
