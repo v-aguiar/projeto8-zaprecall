@@ -199,7 +199,10 @@ main {
 
 .card-buttons {
   display: flex;
-  gap: 2px;
+}
+
+.card-buttons .btn:nth-child(2) {
+  margin: 0 2px 0;
 }
 
 .btn {
@@ -260,6 +263,19 @@ main {
   font-size: 12px;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.footer-icons {
+  margin-top: 5px;
+}
+
+.footer-icons img {
+  width: 17px;
+}
+
+.footer-icons img:nth-child(2) {
+  margin: 0 5px 0;
 }

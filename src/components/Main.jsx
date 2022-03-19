@@ -1,6 +1,6 @@
 ﻿import Card from "./Card"
 
-export default function Main() {
+export default function Main({setClosedCards, closedCards, addProgressIcon}) {
   const decks = {
     react: [
       {
@@ -47,7 +47,7 @@ export default function Main() {
   }
   return (
     <main className="main">
-      {decks.react.map(card => <Card key={card.answer + card.answer} text={card.text} question={card.question} answer={card.answer} />)}
+      {decks.react.map(card => <Card key={card.text + card.question} setClosedCards={setClosedCards} closedCards={closedCards} addProgressIcon={addProgressIcon} text={card.text} question={card.question} answer={card.answer} />)}
     </main>
   )
 }

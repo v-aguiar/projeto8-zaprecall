@@ -1,7 +1,10 @@
-﻿export default function Footer() {
+﻿export default function Footer({closedCards: number, children}) {
   return (
     <footer className="footer">
-      <p>0/8 CONCLUÍDOS</p>
+      <p>{number}/8 CONCLUÍDOS</p>
+      <div className="footer-icons">
+        {children}
+      </div>
     </footer>
   )
 }

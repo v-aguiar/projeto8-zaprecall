@@ -1,14 +1,14 @@
 ﻿import {useState} from "react";
+
 import CardSelect from "./CardSelect";
 import FlipCard from "./FlipCard";
 
-export default function Card({question, answer, text}) {
+export default function Card({question, answer, text, setClosedCards, closedCards, addProgressIcon}) {
   const [backTurn, setBackTurn] = useState("back-face face");
   const [frontTurn, setFrontTurn] = useState("front-face face");
   const [cardClassList, setCardClassList] = useState("card");
   const [visibleQuestion, setVisibleQuestion] = useState(true);
   const [cardSelectIcon, setCardSelectIcon] = useState("assets/triangle-icon.svg")
-
 
   function openQuestion() {
     setVisibleQuestion(false);
@@ -30,17 +30,27 @@ export default function Card({question, answer, text}) {
   }
 
   function addBorderColor(option) {
+    const icons = {
+      fail: "assets/failmark-icon.svg",
+      almost: "assets/questionmark-icon.svg",
+      success: "assets/checkmark-icon.svg"
+    }
+
     if(option === "red") {
       setCardClassList("card --red");
-      setCardSelectIcon("assets/failmark-icon.svg")
-    }
-    if(option === "orange") {
+      setCardSelectIcon(icons.fail);
+      setClosedCards(closedCards + 1);
+      addProgressIcon(icons.fail);
+    } else if(option === "orange") {
       setCardClassList("card --orange");
-      setCardSelectIcon("assets/questionmark-icon.svg")
-    }
-    if(option === "green") {
+      setCardSelectIcon(icons.almost);
+      setClosedCards(closedCards + 1);
+      addProgressIcon(icons.almost);
+    } else if(option === "green") {
       setCardClassList("card --green");
-      setCardSelectIcon("assets/checkmark-icon.svg")
+      setCardSelectIcon(icons.success);
+      setClosedCards(closedCards + 1);
+      addProgressIcon(icons.success);
     }
   }
 
