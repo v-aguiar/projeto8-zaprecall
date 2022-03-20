@@ -97,12 +97,16 @@
 
 /* ************** Main Styles ************** */
 
-main {
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
 
   margin-bottom: 50px;
+}
+
+.main.--finished {
+  margin-bottom: 112px;
 }
 
 /* ************** Cards Styles ************** */
@@ -117,6 +121,8 @@ main {
   background-color: #fff;
 
   border-radius: 10px;
+
+  transition: .5s;
 }
 
 .card-text {
@@ -266,6 +272,8 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  transition: .5s;
 }
 
 .footer-icons {
@@ -278,4 +286,37 @@ main {
 
 .footer-icons img:nth-child(2) {
   margin: 0 5px 0;
+}
+
+/* Finished state */
+
+.footer.--finished {
+  height: 112px;
+  padding-bottom: 9px;
+}
+
+.finished {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.finished .icon-container {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+
+  font-weight: 700;
+}
+
+.finished .icon-container img {
+  width: 18px;
+
+  margin-right: 5px;
+}
+
+.finished .icon-description {
+  margin: 12px 0 12px;
 }

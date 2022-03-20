@@ -3,12 +3,17 @@
 import CardSelect from "./CardSelect";
 import FlipCard from "./FlipCard";
 
-export default function Card({question, answer, text, setClosedCards, closedCards, addProgressIcon}) {
+import triangleIcon from "../assets/triangle-icon.svg"
+import failIcon from "../assets/failmark-icon.svg"
+import almostIcon from "../assets/questionmark-icon.svg"
+import successIcon from "../assets/checkmark-icon.svg"
+
+export default function Card({question, answer, text, setClosedCards, closedCards, addProgressIcon, changeFooterClass, changeMainClass}) {
   const [backTurn, setBackTurn] = useState("back-face face");
   const [frontTurn, setFrontTurn] = useState("front-face face");
   const [cardClassList, setCardClassList] = useState("card");
   const [visibleQuestion, setVisibleQuestion] = useState(true);
-  const [cardSelectIcon, setCardSelectIcon] = useState("assets/triangle-icon.svg")
+  const [cardSelectIcon, setCardSelectIcon] = useState(triangleIcon)
 
   function openQuestion() {
     setVisibleQuestion(false);
@@ -30,27 +35,40 @@ export default function Card({question, answer, text, setClosedCards, closedCard
   }
 
   function addBorderColor(option) {
-    const icons = {
-      fail: "assets/failmark-icon.svg",
-      almost: "assets/questionmark-icon.svg",
-      success: "assets/checkmark-icon.svg"
-    }
-
     if(option === "red") {
       setCardClassList("card --red");
-      setCardSelectIcon(icons.fail);
+      setCardSelectIcon(failIcon);
       setClosedCards(closedCards + 1);
-      addProgressIcon(icons.fail);
-    } else if(option === "orange") {
+      addProgressIcon(failIcon);
+      changeFooterClass();
+
+      if(closedCards === 7) {
+        changeMainClass(" --finished")
+      };
+    }
+
+    if(option === "orange") {
       setCardClassList("card --orange");
-      setCardSelectIcon(icons.almost);
+      setCardSelectIcon(almostIcon);
       setClosedCards(closedCards + 1);
-      addProgressIcon(icons.almost);
-    } else if(option === "green") {
+      addProgressIcon(almostIcon);
+      changeFooterClass();
+
+      if(closedCards === 7) {
+        changeMainClass(" --finished")
+      };
+    }
+
+    if(option === "green") {
       setCardClassList("card --green");
-      setCardSelectIcon(icons.success);
+      setCardSelectIcon(successIcon);
       setClosedCards(closedCards + 1);
-      addProgressIcon(icons.success);
+      addProgressIcon(successIcon);
+      changeFooterClass();
+
+      if(closedCards === 7) {
+        changeMainClass(" --finished")
+      };
     }
   }
 

@@ -1,6 +1,8 @@
-﻿import Card from "./Card"
+﻿import {useState} from "react";
 
-export default function Main({setClosedCards, closedCards, addProgressIcon}) {
+import Card from "./Card"
+
+export default function Main({setClosedCards, closedCards, addProgressIcon, changeFooterClass}) {
   const decks = {
     react: [
       {
@@ -45,9 +47,16 @@ export default function Main({setClosedCards, closedCards, addProgressIcon}) {
       },
     ]
   }
+
+  const [mainClassList, setMainClassList] = useState("main");
+
+  function changeMainClass(value) {
+    setMainClassList(mainClassList + value);
+  }
+
   return (
-    <main className="main">
-      {decks.react.map(card => <Card key={card.text + card.question} setClosedCards={setClosedCards} closedCards={closedCards} addProgressIcon={addProgressIcon} text={card.text} question={card.question} answer={card.answer} />)}
+    <main className={mainClassList}>
+      {decks.react.map(card => <Card key={card.text + card.question} changeMainClass={changeMainClass} changeFooterClass={changeFooterClass} setClosedCards={setClosedCards} closedCards={closedCards} addProgressIcon={addProgressIcon} text={card.text} question={card.question} answer={card.answer} />)}
     </main>
   )
 }

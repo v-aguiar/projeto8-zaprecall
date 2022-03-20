@@ -7,6 +7,13 @@ import Main from "./Main"
 export default function MainContent() {
   const [closedCards, setClosedCards] = useState(0);
   const [progressIcon, setProgressIcon] = useState([]);
+  const [footerClass, setFooterClass] = useState("footer");
+
+
+  function changeFooterClass() {
+    (closedCards === 7) ? setFooterClass("footer --finished") : setFooterClass("footer");
+
+  }
 
   function addProgressIcon(option) {
     /* eslint-disable */
@@ -20,8 +27,8 @@ export default function MainContent() {
   return (
     <>
       <Header />
-      <Main setClosedCards={setClosedCards} closedCards={closedCards} addProgressIcon={addProgressIcon} />
-      <Footer closedCards={closedCards}>
+      <Main changeFooterClass={changeFooterClass} setClosedCards={setClosedCards} closedCards={closedCards} addProgressIcon={addProgressIcon} />
+      <Footer closedCards={closedCards} footerClass={footerClass}>
         {progressIcon.map(icon => icon)}
       </Footer>
     </>
