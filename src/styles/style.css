@@ -282,10 +282,12 @@
 
 .footer-icons img {
   width: 17px;
+
+  margin-right: 5px;
 }
 
-.footer-icons img:nth-child(2) {
-  margin: 0 5px 0;
+.footer-icons img:last-child {
+  margin-right: 0;
 }
 
 /* Finished state */

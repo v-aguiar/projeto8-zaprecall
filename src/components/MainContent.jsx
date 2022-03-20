@@ -16,12 +16,9 @@ export default function MainContent() {
   }
 
   function addProgressIcon(option) {
-    /* eslint-disable */
     const icon = <img key={option} src={option} alt="Progress icon" />;
 
-    const hasIcon = (progressIcon.filter(icone => icone.key === icon.key)) != 0;
-
-    hasIcon ? setProgressIcon([...progressIcon]) : setProgressIcon([...progressIcon, icon]);
+    setProgressIcon([...progressIcon, icon]);
   }
 
   return (
