@@ -2,7 +2,7 @@
 
 import Card from "./Card"
 
-export default function Main({setClosedCards, closedCards, addProgressIcon, changeFooterClass}) {
+export default function Main({setClosedCards, closedCards, addProgressIcon, changeFooterClass, setRememberAll}) {
   const decks = {
     react: [
       {
@@ -56,7 +56,7 @@ export default function Main({setClosedCards, closedCards, addProgressIcon, chan
 
   return (
     <main className={mainClassList}>
-      {decks.react.map(card => <Card key={card.text + card.question} changeMainClass={changeMainClass} changeFooterClass={changeFooterClass} setClosedCards={setClosedCards} closedCards={closedCards} addProgressIcon={addProgressIcon} text={card.text} question={card.question} answer={card.answer} />)}
+      {decks.react.map(card => <Card key={card.text + card.question} setRememberAll={setRememberAll} changeMainClass={changeMainClass} changeFooterClass={changeFooterClass} setClosedCards={setClosedCards} closedCards={closedCards} addProgressIcon={addProgressIcon} text={card.text} question={card.question} answer={card.answer} />)}
     </main>
   )
 }

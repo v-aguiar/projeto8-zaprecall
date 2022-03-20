@@ -1,7 +1,7 @@
 ﻿import successIcon from "../assets/party-icon.svg"
 import sadIcon from "../assets/sad-icon.svg"
 
-export default function FinishedFooter() {
+export default function FinishedFooter({rememberAll}) {
   const finishStatus = {
     success: {
       icon: successIcon,
@@ -16,13 +16,29 @@ export default function FinishedFooter() {
     }
   }
 
-  return (
-    <div className="finished">
+  const succesOutcome = (
+    <>
       <div className="icon-container">
         <img src={finishStatus.success.icon} alt="Finished status icon" />
         <p className="icon-description">{finishStatus.success.iconDescription}</p>
       </div>
       <p className="description" >{finishStatus.success.text}</p>
+    </>
+  )
+
+  const notYetOutcome = (
+    <>
+      <div className="icon-container">
+        <img src={finishStatus.notYet.icon} alt="Finished status icon" />
+        <p className="icon-description">{finishStatus.notYet.iconDescription}</p>
+      </div>
+      <p className="description" >{finishStatus.notYet.text}</p>
+    </>
+  )
+
+  return (
+    <div className="finished">
+      {rememberAll ? succesOutcome : notYetOutcome}
     </div>
   )
 }

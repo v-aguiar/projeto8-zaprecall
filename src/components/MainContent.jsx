@@ -8,7 +8,7 @@ export default function MainContent() {
   const [closedCards, setClosedCards] = useState(0);
   const [progressIcon, setProgressIcon] = useState([]);
   const [footerClass, setFooterClass] = useState("footer");
-
+  const [rememberAll, setRememberAll] = useState("true");
 
   function changeFooterClass() {
     (closedCards === 7) ? setFooterClass("footer --finished") : setFooterClass("footer");
@@ -16,7 +16,7 @@ export default function MainContent() {
   }
 
   function addProgressIcon(option) {
-    const icon = <img key={option} src={option} alt="Progress icon" />;
+    const icon = <img key={option + closedCards} src={option} alt="Progress icon" />;
 
     setProgressIcon([...progressIcon, icon]);
   }
@@ -24,8 +24,8 @@ export default function MainContent() {
   return (
     <>
       <Header />
-      <Main changeFooterClass={changeFooterClass} setClosedCards={setClosedCards} closedCards={closedCards} addProgressIcon={addProgressIcon} />
-      <Footer closedCards={closedCards} footerClass={footerClass}>
+      <Main changeFooterClass={changeFooterClass} setRememberAll={setRememberAll} setClosedCards={setClosedCards} closedCards={closedCards} addProgressIcon={addProgressIcon} />
+      <Footer closedCards={closedCards} footerClass={footerClass} rememberAll={rememberAll} >
         {progressIcon.map(icon => icon)}
       </Footer>
     </>

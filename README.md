@@ -3,7 +3,7 @@
 - Geral
     - [X]  Manipule o HTML usando somente React (**sem usar o document, nem o localStorage,** nem bibliotecas React, JavaScript e/ou CSS). **Todo o armazenamento de informações deve ser feito via estados.**
     - [X]  Seu projeto deverá ser desenvolvido utilizando Git e GitHub.
-    - [ ]  **A cada requisito implementado** faça um *commit* com uma mensagem descritiva do que você evoluiu. Caso queira dividir um requisito em vários *commits*, não há problema. Mas evite colocar mais de um requisito no mesmo *commit*.
+    - [-]  **A cada requisito implementado** faça um *commit* com uma mensagem descritiva do que você evoluiu. Caso queira dividir um requisito em vários *commits*, não há problema. Mas evite colocar mais de um requisito no mesmo *commit*.
 - Layout
     
     [ZapRecall (Proposta T5 )](https://www.figma.com/file/DACvsO649ncOAfI0PWzyl3/ZapRecall-(Proposta-T5-)?node-id=0%3A1)
@@ -38,12 +38,12 @@
             - [X]  Uma borda deverá surgir em volta do *flashcard* respondido, com a cor correta correspondente ao seu status e um ícone.
 - Resultado final
     - [X]  O resultado deve estar fixado na parte debaixo da página.
-    - [ ]  Sempre que uma carta for virada...
+    - [X]  Sempre que uma carta for virada...
         - [X]  O número de flashcards respondidos deve ser atualizado
-        - [ ]  A sequência de respostas deve ser registrada e aparecer no formato de ícones (importante: os ícones devem aparecer de acordo com a ordem de respostas do usuário e não da ordem dos flashcards!).
-    - [ ]  Quando todos os flashcards forem respondidos...
-        - [ ]  A mensagem de parabéns deve ser exibida se somente as respostas dos *flashcards* forem “ZAP!” ou “Lembrei com esforço”.
-            - [ ]  Ao responder todos os *flashcards* e houver pelo menos um *status* "Incorreto", a mensagem de “Putz” deverá ser exibida.
+        - [X]  A sequência de respostas deve ser registrada e aparecer no formato de ícones (importante: os ícones devem aparecer de acordo com a ordem de respostas do usuário e não da ordem dos flashcards!).
+    - [X]  Quando todos os flashcards forem respondidos...
+        - [X]  A mensagem de parabéns deve ser exibida se somente as respostas dos *flashcards* forem “ZAP!” ou “Lembrei com esforço”.
+            - [X]  Ao responder todos os *flashcards* e houver pelo menos um *status* "Incorreto", a mensagem de “Putz” deverá ser exibida.
 
 # Bônus (opcional)
 

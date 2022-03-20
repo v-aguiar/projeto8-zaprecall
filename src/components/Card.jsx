@@ -8,7 +8,7 @@ import failIcon from "../assets/failmark-icon.svg"
 import almostIcon from "../assets/questionmark-icon.svg"
 import successIcon from "../assets/checkmark-icon.svg"
 
-export default function Card({question, answer, text, setClosedCards, closedCards, addProgressIcon, changeFooterClass, changeMainClass}) {
+export default function Card({question, answer, text, setClosedCards, closedCards, addProgressIcon, changeFooterClass, changeMainClass, setRememberAll}) {
   const [backTurn, setBackTurn] = useState("back-face face");
   const [frontTurn, setFrontTurn] = useState("front-face face");
   const [cardClassList, setCardClassList] = useState("card");
@@ -45,6 +45,8 @@ export default function Card({question, answer, text, setClosedCards, closedCard
       if(closedCards === 7) {
         changeMainClass(" --finished")
       };
+
+      setRememberAll(false);
     }
 
     if(option === "orange") {
