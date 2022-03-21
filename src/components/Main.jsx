@@ -68,14 +68,19 @@ export default function Main({setClosedCards, closedCards, addProgressIcon, chan
   ]
 
   const [mainClassList, setMainClassList] = useState("main");
+  const [cards] = useState(decks.react.sort(comparador))
 
   function changeMainClass(value) {
     setMainClassList(mainClassList + value);
   }
 
+  function comparador() {
+    return Math.random() - 0.5;
+  }
+
   return (
     <main className={mainClassList}>
-      {decks.react.map((card, index) => <Card key={card.question + index} setRememberAll={setRememberAll} changeMainClass={changeMainClass} changeFooterClass={changeFooterClass} setClosedCards={setClosedCards} closedCards={closedCards} addProgressIcon={addProgressIcon} text={cardsText[index].text} question={card.question} answer={card.answer} />)}
+      {cards.map((card, index) => <Card key={card.question + index} setRememberAll={setRememberAll} changeMainClass={changeMainClass} changeFooterClass={changeFooterClass} setClosedCards={setClosedCards} closedCards={closedCards} addProgressIcon={addProgressIcon} text={cardsText[index].text} question={card.question} answer={card.answer} />)}
     </main>
   )
 }
