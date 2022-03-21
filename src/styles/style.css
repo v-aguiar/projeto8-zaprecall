@@ -322,3 +322,14 @@
 .finished .icon-description {
   margin: 12px 0 12px;
 }
+
+.restart-button {
+  display: flex;
+  margin: 8px auto;
+  border: none;
+  color: #fff;
+  background-color: var(--bg-pink);
+  border-radius: 5px;
+  height: 24px;
+  padding: 5px 12px;
+}

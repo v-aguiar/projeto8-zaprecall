@@ -7,7 +7,7 @@ export default function App() {
 
   return (
     <div className="app">
-      {(showHome) ? <HomePage hideHome={setShowHome} /> : <MainContent />}
+      {(showHome) ? <HomePage hideHome={setShowHome} /> : <MainContent setShowHome={setShowHome} showHome={showHome} />}
     </div>
   )
 }

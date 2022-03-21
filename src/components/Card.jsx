@@ -13,7 +13,7 @@ export default function Card({question, answer, text, setClosedCards, closedCard
   const [frontTurn, setFrontTurn] = useState("front-face face");
   const [cardClassList, setCardClassList] = useState("card");
   const [visibleQuestion, setVisibleQuestion] = useState(true);
-  const [cardSelectIcon, setCardSelectIcon] = useState(triangleIcon)
+  const [cardSelectIcon, setCardSelectIcon] = useState(triangleIcon);
 
   function openQuestion() {
     setVisibleQuestion(false);
@@ -30,17 +30,17 @@ export default function Card({question, answer, text, setClosedCards, closedCard
     setFrontTurn("front-face face front-card-turn-back");
 
     setVisibleQuestion(true);
-    setCardClassList("card");
     addBorderColor(option);
   }
 
   function addBorderColor(option) {
     if(option === "red") {
       setCardClassList("card --red");
-      setCardSelectIcon(failIcon);
       setClosedCards(closedCards + 1);
-      addProgressIcon(failIcon);
       changeFooterClass();
+
+      setCardSelectIcon(failIcon);
+      addProgressIcon(failIcon);
 
       if(closedCards === 7) {
         changeMainClass(" --finished")
@@ -51,10 +51,11 @@ export default function Card({question, answer, text, setClosedCards, closedCard
 
     if(option === "orange") {
       setCardClassList("card --orange");
-      setCardSelectIcon(almostIcon);
       setClosedCards(closedCards + 1);
-      addProgressIcon(almostIcon);
       changeFooterClass();
+
+      setCardSelectIcon(almostIcon);
+      addProgressIcon(almostIcon);
 
       if(closedCards === 7) {
         changeMainClass(" --finished")
@@ -63,10 +64,11 @@ export default function Card({question, answer, text, setClosedCards, closedCard
 
     if(option === "green") {
       setCardClassList("card --green");
-      setCardSelectIcon(successIcon);
       setClosedCards(closedCards + 1);
-      addProgressIcon(successIcon);
       changeFooterClass();
+
+      setCardSelectIcon(successIcon);
+      addProgressIcon(successIcon);
 
       if(closedCards === 7) {
         changeMainClass(" --finished")
